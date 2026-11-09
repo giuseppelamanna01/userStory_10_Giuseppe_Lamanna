@@ -1,3 +1,6 @@
 .height-custom{
     min-height: 60vh;
 }
+.card-w {
+    width: 18rem;
+}
