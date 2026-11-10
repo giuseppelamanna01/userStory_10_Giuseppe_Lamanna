@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ route('home') }}">UserStory3</a>
+        <a class="navbar-brand" href="{{ route('home') }}">UserStory10</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -74,6 +74,15 @@
                     </li>
                 @endauth
             </ul>
+            <form class="d-flex ms-auto" role="search" action="{{route('article.search')}}" method="GET">
+                <div class="input-group">
+                    <input type="search" name="query" class="form-control" placeholder="Search" aria-label="search">
+                    <button type="submit" class="input-group-text btn btn-outline-success"
+                        id="basic-addon2">
+                        Search
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </nav>

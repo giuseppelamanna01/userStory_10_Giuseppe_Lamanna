@@ -21,6 +21,7 @@ class ArticleController extends Controller implements HasMiddleware
             'description' => 'required|min:10',
             'price' => 'required|numeric',
             'category' => 'required|exists:categories,id',
+            'is_accepted' => false
         ]);
 
         Article::create([
