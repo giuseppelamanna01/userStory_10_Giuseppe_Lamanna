@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary shadow">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ route('home') }}">UserStory2</a>
+        <a class="navbar-brand" href="{{ route('home') }}">UserStory3</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -39,6 +39,16 @@
                             <form action="{{route('logout')}}" method="POST" class="d-none" id="form-logout">
                                 @csrf
                             </form>
+                            @auth
+                                @if (Auth::user()->is_revisor)
+                                    <li class="nav-item">
+                                        <a class="nav-link btn btn-outline-success btn-sm position-relative w-sm-25"
+                                            href="{{ route('revisor.index') }}">Zona revisore
+                                            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">{{\App\Models\Article::toBeRevisedCount()}}</span>
+                                        </a>
+                                    </li>
+                                @endif
+                            @endauth
                         </ul>
                     </li>
                             <!-- <li><a class="dropdown-item" href="#">Another action</a></li>
